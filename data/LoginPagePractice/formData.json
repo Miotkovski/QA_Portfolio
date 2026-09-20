@@ -1,0 +1,11 @@
+{
+    "userData":{
+        "name":"Tester",
+        "email":"tester@test.pl",
+        "password":"Test123!@#",
+        "gender":"Male",
+        "employmentStatus":"Student",
+        "birthDate" : "1998-12-02",
+        "successAlert" : "The Form has been submitted successfully"
+    }
+}
