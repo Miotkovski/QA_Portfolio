@@ -21,7 +21,7 @@ export default defineConfig({
   /* Retry on CI only */
  retries: 1,
   /* Opt out of parallel tests on CI. */
-  workers: 3,
+  workers: process.env.CI ? 1 : undefined, //if workers are undefined by default playwright uses 50 % of core.
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -32,7 +32,7 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on',
     screenshot:'on',
-    headless : false
+    headless : process.env.CI ? true : false //IF CI var exist it uses true if not - locally its false
   },
 
   /* Configure projects for major browsers */
