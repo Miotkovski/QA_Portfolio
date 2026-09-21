@@ -25,6 +25,11 @@ async selectAdminStudentTerms(){
 async clickSignInBtn(){
     await this.signInBtn.click();
 }
+async login(userData){
+    await this.entryUserCredentials(userData.username,userData.password);
+    await this.selectAdminStudentTerms();
+    await this.clickSignInBtn();
+}
 
 }
 module.exports = {LoginPage};

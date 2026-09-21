@@ -2,18 +2,17 @@ const { test, expect } = require("@playwright/test");
 const { LoginPage } = require("../../../src/pages/LoginPagePractice/LoginPage");
 const { ShopPage } = require("../../../src/pages/LoginPagePractice/ShopPage");
 const loginData = require("../../../data/LoginPagePractice/loginData.json");
-const prodData = require("../../../data/LoginPagePractice/productsData.json");
+const productsData = require("../../../data/LoginPagePractice/productsData.json");
 
 test("Successful Login to 'LoginPage Practise'", async ({ page }) => {
 
     const loginPage = new LoginPage(page);
     await loginPage.goToPage();
-    await loginPage.entryUserCredentials(loginData.validUser.username, loginData.validUser.password);
-    await loginPage.selectAdminStudentTerms();
-    await loginPage.clickSignInBtn();
+    await loginPage.login(loginData.validUser);
     const shopPage = new ShopPage(page);
-    const visibilityValidation = await shopPage.getProductLink(prodData.productName.firstProd);
+    const productName = productsData.productName.firstProd
+    const visibilityValidation = await shopPage.getProductLink(productName);
     await expect(visibilityValidation).toBeVisible();
-    const prodText = await shopPage.getProdText(prodData.productName.firstProd);
+    const prodText = await shopPage.getProdText(productName);
     console.log("Here is prod string:", prodText);
 })
