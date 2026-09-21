@@ -50,7 +50,11 @@ class CheckoutPage extends BasePage {
         const successText = await this.successTextLocator.textContent();
         return successText.trim();
     }
-
+    async completePurchase(country){
+        await this.enterCountryAndClick(country)
+        await this.acceptTerms();
+        await this.clickPurchase();
+    }
 
 }
 module.exports = { CheckoutPage };
