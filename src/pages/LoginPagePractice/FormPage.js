@@ -2,7 +2,7 @@ const {BasePage} = require("../BasePage");
 class FormPage extends BasePage {
     constructor(page) {
         super(page);
-        this.nameLocator = page.locator("input[name='name']").first();
+        this.nameInputLocator = page.locator("input[name='name']").first();
         this.emailLocator = page.locator("input[name='email']");
         this.passwordLocator = page.getByPlaceholder("Password");
         this.checkIceCreamLocator = page.locator("#exampleCheck1");
@@ -13,12 +13,17 @@ class FormPage extends BasePage {
         this.submitLocator = page.locator("input[value='Submit']");
         this.twoWayBindingLocator = page.locator("input[name='name']").last();
         this.successAlertLoc = page.getByText("The Form has been submitted successfully");
+        this.validationErrorLocator = page.locator(".alert.alert-danger");
     }
     async goToPage(){
         await this.page.goto("https://rahulshettyacademy.com/angularpractice/");
     }
+    async fillName(name){
+        await this.nameInputLocator.fill(name);
+        await this.nameInputLocator.blur();
+    }
     async fillUserCredentials(credentials) {
-        await this.nameLocator.fill(credentials.name);
+        await this.nameInputLocator.fill(credentials.name);
         await this.emailLocator.fill(credentials.email);
         await this.passwordLocator.fill(credentials.password);
     }
