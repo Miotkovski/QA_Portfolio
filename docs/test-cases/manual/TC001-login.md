@@ -1,11 +1,15 @@
-# TC001: User Registration
+# Test Cases - Authentication Flow
 
-**Preconditions:** 
-User is on the [homepage.](https://rahulshettyacademy.com/loginpagePractise/).
+## TC001: Successful user login with valid credentials
+* **Priority:** High
+* **Type:** Manual / Automated (`tests/loginTest.spec.js`)
+* **Preconditions:** The application is accessible, and valid user credentials are available in the test data.
 
-| Step | Action | Expected Result |
-| :--- | :--- | :--- |
-| 1 | Enter username *rahulshettyacademy* and password*Learning@830$3mK2* | Input fields display entered data |
-| 2 | Select "Admin" radio button and "Student" from dropdown | "Admin" is selected, "Student" is displayed |
-| 3 | Check "I Agree to the terms and conditions" | Checkbox is checked |
-| 4 | Click "Sign In" Button | The user is redirected to shop page | 
+### Steps to Reproduce:
+1. Navigate to the login page (`/loginpagePractise/`).
+2. Enter valid credentials (username and password).
+3. Select the required role (e.g., Student) and check the terms & conditions checkbox.
+4. Click the "Sign In" button.
+
+### Expected Result:
+The user is successfully redirected to the shop page, and store elements (such as product links) are visible and accessible.
