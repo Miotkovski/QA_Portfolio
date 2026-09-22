@@ -2,7 +2,8 @@
 
 ## TC001: Successful user login with valid credentials
 * **Priority:** High
-* **Type:** Manual / Automated (`tests/loginTest.spec.js`)
+* **Type:** Manual / Automated 
+* **Automated Test File** [`successUserLogin.spec.js`](../../../tests/ui-js/LoginPagePractice/successUserLogin.spec.js)
 * **Preconditions:** The application is accessible, and valid user credentials are available in the test data.
 
 ### Steps to Reproduce:

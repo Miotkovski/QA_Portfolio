@@ -2,7 +2,8 @@
 
 ## TC002: Successful product purchase from the shop page
 * **Priority:** High
-* **Type:** Manual / Automated (`tests/purchaseTest.spec.js`)
+* **Type:** Manual / Automated 
+* **Automated Test File** [`successPurchase.spec.js`](../../../tests/ui-js/LoginPagePractice/successPurchase.spec.js)
 * **Preconditions:** User is logged in or has direct access to the shop page.
 
 ### Steps to Reproduce:

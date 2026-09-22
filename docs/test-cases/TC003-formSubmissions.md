@@ -2,7 +2,8 @@
 
 ## TC003: Successful user registration form submission
 * **Priority:** Medium
-* **Type:** Manual / Automated (`tests/formTest.spec.js`)
+* **Type:** Manual / Automated 
+* **Automated Test File** [`formSubmission.spec.js`](../../../tests/ui-js/LoginPagePractice/formSubmission.spec.js)
 * **Preconditions:** The form page is loaded, and test data is available in `formData.json`.
 
 ### Steps to Reproduce:

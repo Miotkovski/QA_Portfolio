@@ -2,7 +2,8 @@
 
 ## TC004: Negative validation for Name field minlength requirement
 * **Priority:** Medium
-* **Type:** Manual / Automated (`tests/formTest.spec.js`)
+* **Type:** Manual / Automated 
+* **Automated Test File** [`negativeFormValidation.spec.js`](../../../tests/ui-js/LoginPagePractice/negativeFormValidation.spec.js)
 * **Preconditions:** The form page is loaded (`/angularpractice/`).
 
 ### Steps to Reproduce:
