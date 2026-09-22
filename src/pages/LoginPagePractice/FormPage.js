@@ -6,7 +6,7 @@ class FormPage extends BasePage {
         this.emailInputLocator = page.locator("input[name='email']");
         this.passwordLocator = page.getByPlaceholder("Password");
         this.checkIceCreamLocator = page.locator("#exampleCheck1");
-        this.genderSelectLocator = page.locator("select[id='exampleFormControlSelect1']");
+        this.genderSelectLocator = page.locator("#exampleFormControlSelect1");
         this.employStatusStudentLoc = page.locator("#inlineRadio1");
         this.entrepreneurStatusLoc = page.locator("#inlineRadio3");
         this.employStatusEmployedLoc = page.locator("#inlineRadio2");
