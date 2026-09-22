@@ -3,7 +3,7 @@ class FormPage extends BasePage {
     constructor(page) {
         super(page);
         this.nameInputLocator = page.locator("input[name='name']").first();
-        this.emailLocator = page.locator("input[name='email']");
+        this.emailInputLocator = page.locator("input[name='email']");
         this.passwordLocator = page.getByPlaceholder("Password");
         this.checkIceCreamLocator = page.locator("#exampleCheck1");
         this.genderSelectLocator = page.locator("select[id='exampleFormControlSelect1']");
@@ -13,18 +13,20 @@ class FormPage extends BasePage {
         this.submitLocator = page.locator("input[value='Submit']");
         this.twoWayBindingLocator = page.locator("input[name='name']").last();
         this.successAlertLoc = page.getByText("The Form has been submitted successfully");
-        this.validationErrorLocator = page.locator(".alert.alert-danger");
+        this.nameRequiredErrLoc = page.locator(".alert.alert-danger",{hasText:/Name is required/})
+        this.nameLengthErrLocator = page.locator(".alert.alert-danger",{hasText: /Name should be at least 2 characters/});
+        this.emailRequiredErrLoc = page.locator(".alert.alert-danger",{hasText: /Email is required/})
     }
     async goToPage(){
         await this.page.goto("https://rahulshettyacademy.com/angularpractice/");
     }
-    async fillName(name){
+    async fillNameAndBlur(name){
         await this.nameInputLocator.fill(name);
         await this.nameInputLocator.blur();
     }
     async fillUserCredentials(credentials) {
         await this.nameInputLocator.fill(credentials.name);
-        await this.emailLocator.fill(credentials.email);
+        await this.emailInputLocator.fill(credentials.email);
         await this.passwordLocator.fill(credentials.password);
     }
     async checkIceCreamCheckbox(){
