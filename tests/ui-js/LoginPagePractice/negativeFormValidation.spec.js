@@ -1,9 +1,10 @@
 const { test, expect } = require("@playwright/test");
 const { FormPage } = require("../../../src/pages/LoginPagePractice/FormPage");
-
+const userData = require("../../../data/LoginPagePractice/formData.json");
 //do zrobienia before each żeby nie powtarzać 
 test.describe("Form Validation Tests", ()=>{
     let formPage;
+    const userName = userData.userData.name;
     test.beforeEach(async({page})=>{
         formPage = new FormPage(page);
         await formPage.goToPage();
@@ -36,5 +37,10 @@ test.describe("Form Validation Tests", ()=>{
     
     test("Gender dropdown should contain two options: 'Female' and 'Male'", async({}) =>{
         await expect(formPage.genderSelectLocator).toHaveText(/Male.*Female/s);
-    })
+    });
+
+    test("Two-way data binding reflection in Name input", async({})=>{
+        await formPage.fillNameAndBlur(userName);
+        await expect(formPage.twoWayBindingLocator).toHaveValue(userName);
+    });
 })
