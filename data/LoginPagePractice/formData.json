@@ -7,5 +7,12 @@
         "employmentStatus":"Student",
         "birthDate" : "1998-12-02",
         "successAlert" : "The Form has been submitted successfully"
-    }
+    },
+    "birthDateValidation":[
+        {"description": "below minimum valid year(3 digits)","input":"0999-01-01","expected":"0999-01-01"},
+        {"description": "minimum valid boundary year","input":"1000-01-01","expected": "1000-01-01"},
+        {"description": "maximum valid boundary year","input":"3000-12-31","expected": "3000-12-31"},
+        {"description": "above maximum boundary year","input":"3001-12-31", "expected": "3001-12-31"},
+        {"description": "text type invalid content", "input":"invalid-date","expected": ""}
+    ]
 }

@@ -19,7 +19,9 @@ class FormPage extends BasePage {
         this.emailRequiredErrLoc = page.locator(".alert.alert-danger", { hasText: /Email is required/ })
     }
     async goToPage() {
-        await this.page.goto("https://rahulshettyacademy.com/angularpractice/");
+        await this.page.goto("https://rahulshettyacademy.com/angularpractice/",{
+            waitUntil: "domcontentloaded"
+        });
     }
     async fillNameAndBlur(name) {
         await this.nameInputLocator.fill(name);
